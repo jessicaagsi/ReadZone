@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#sidebar {
+    height: 100vh; /* Full height of the viewport */
+    width: 200px;  /* Fixed width for the sidebar */
+    position: fixed; /* Sidebar remains fixed while scrolling */
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+}
+
+#sidebar h2 {
+    color: white;
+    text-align: center;
+}
+
+#sidebar a {
+    padding: 15px;
+    text-align: left;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#sidebar a:hover {
+    background-color: #575757;
+}
+
+
+/* Main content */
+#main-content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Simple cards */
+/* Simple cards */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 2rem 3rem;
+}
+
+/* Adding space between lines in card */
+.card h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5; /* Adjust the line height for more space between lines */
+}
+
+.card p {
+    margin: 0;
+    color: #777;
+    line-height: 1.6; /* Add space between lines of text */
+}
+
+/* Style for div1 with flexbox and spacing */
+.div1 ul {
+    display: flex;          /* Use flexbox for the list */
+    justify-content: space-around;  /* Distribute space evenly between items */
+    list-style-type: none;  /* Remove default bullet points */
+    padding: 0;             /* Remove default padding */
+    margin: 0;              /* Remove default margin */
+    gap: 20px;              /* Add space between each list item */
+}
+
+.div1 {
+    background-color: rgb(62, 62, 56);
+    margin: 35px;
+    padding: 10px 20px; 
+}
+
+.div1 ul li {
+    margin: 0;              /* Ensure no extra margin on list items */
+}
+
+.div1 ul li a {
+    text-decoration: none;  /* Remove underline from links */
+    color: #ffffff;            /* Set link color */
+    font-size: 16px;        /* Adjust font size */
+    padding: 10px 15px;     /* Add some padding for better spacing */
+    transition: background-color 0.3s;  /* Add smooth hover effect */
+}
+
+.div1 ul li a:hover {
+    background-color: #575757;  /* Change background on hover */
+    color: white;               /* Change text color on hover */
+}
