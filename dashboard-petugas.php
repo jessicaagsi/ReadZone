@@ -13,7 +13,7 @@
     <div class="div1">
       <ul>
         <li><a href="#reports">Home / Setting</a></li>
-        <li><a href="#overview">Profile</a></li>
+        <li><a href="/buku/buku.php">Buku</a></li>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#analytics">Analytics</a></li>
         <li><a onclick="showTable()">Reports</a></li>
