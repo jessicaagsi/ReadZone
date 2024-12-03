@@ -12,7 +12,7 @@
     </div>
     <div class="div1">
       <ul>
-      <li><a href="#reports">Home</a></li>
+        <li><a href="#reports">Home</a></li>
         <li><a href="buku.php">Buku</a></li>
         <li><a href="kategori.php">Kategori</a></li>
         <li><a href="#analytics">Analytics</a></li>
@@ -29,14 +29,11 @@
     </div>
 
     <div id="main-content">
-      <h1>Buku</h1>
+      <h1>Kategori</h1>
       <section id="overview">
         <div class="card">
             <button>
-            <a href="tambah-buku.php">Tambah Buku +</a>
-            </button>
-            <button>
-            <a href="cetak-buku.php">Cetak Buku</a>
+            <a href="tambah-kategori.php">Tambah Kategori +</a>
             </button>
             <style>
     body {
@@ -124,22 +121,16 @@
           <table>
         <thead>
             <tr>
-            <th>ID Buku</th>
-            <th>Judul Buku</th>
-            <th>Kategori Buku</th>
-            <th>Pengarang Buku</th>
-            <th>Penerbit Buku</th>
-                <th>Tahun Buku</th>
+               
+                <th>Kategori Buku</th>
                 <th>Aksi</th>
+
             </tr>
         </thead>
         <tbody>
         <?php
         include '../koneksi.php'; 
-        $sql = "SELECT tb_buku.id, tb_buku.nama_buku,tb_buku.pengarang,tb_buku.penerbit,tb_buku.tahun_terbit, tb_kategori.kategori
-FROM tb_buku
-JOIN tb_kategori ON tb_buku.id_kategori = tb_kategori.id;
-";
+        $sql = "SELECT * FROM tb_kategori";
         $result = $koneksi->query($sql);
         ?>
             <?php
@@ -147,15 +138,12 @@ JOIN tb_kategori ON tb_buku.id_kategori = tb_kategori.id;
 
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $row['id'] . "</td>";
-                    echo "<td>" . $row['nama_buku'] . "</td>";
+                 
                     echo "<td>" . $row['kategori'] . "</td>";
-                    echo "<td>" . $row['pengarang'] . "</td>";
-                    echo "<td>" . $row['penerbit'] . "</td>";
-                    echo "<td>" . $row['tahun_terbit'] . "</td>";
+                  
                     echo "<td>
-                    <a href='edit-buku.php?id=" . $row['id'] . "'>Edit</a> | 
-                    <a href='delete-buku.php?id=" . $row['id'] . "' onclick='return confirm(\"Apakah Anda yakin ingin menghapus buku ini?\")'>Delete</a>
+                    <a href='edit-kategori.php?id=" . $row['id'] . "'>Edit</a> | 
+                    <a href='delete-kategori.php?id=" . $row['id'] . "' onclick='return confirm(\"Apakah Anda yakin ingin menghapus buku ini?\")'>Delete</a>
                   </td>";
                     echo "</tr>";
                 }

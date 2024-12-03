@@ -12,11 +12,9 @@
     </div>
     <div class="div1">
       <ul>
-        <li><a href="#reports">Home / Setting</a></li>
-        <li><a href="#overview">Profile</a></li>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#analytics">Analytics</a></li>
-        <li><a onclick="showTable()">Reports</a></li>
+        <li><a href="/dashboard.php">Home</a></li>
+        <li><a href="./buku/buku.php">Buku</a></li>
+        <li><a href="./buku/kategori.php">Kategori</a></li>
         <li>
           <a href="logout.php" onclick="myFunction()">Log Out</a>
           <script>
@@ -30,22 +28,41 @@
 
     <div id="main-content">
       <h1>Welcome To Dashboard</h1>
+      <?php
+        include('koneksi.php'); 
 
-      <section id="overview">
-        <div class="card">
-          <h2>Overview</h2>
-        </div>
-      </section>
 
+        $query = mysqli_query($koneksi, "SELECT COUNT(*) AS total_buku FROM tb_buku");
+        $result = mysqli_fetch_assoc($query);
+        $total_buku = $result['total_buku']; 
+        ?>
+     <section id="overview">
+  <div class="card">
+    <h2>Jumlah Buku</h2>
+    <h2><?php echo $total_buku; ?></h2> 
+</section>
+<?php
+        include('koneksi.php'); 
+
+
+        $query = mysqli_query($koneksi, "SELECT COUNT(*) AS total_kategori FROM tb_kategori");
+        $result = mysqli_fetch_assoc($query);
+        $total_kategori = $result['total_kategori']; 
+        ?>
       <section id="analytics">
         <div class="card">
-          <h2>Analytics</h2>
+          <h2>Jumlah Kategori</h2>
+    <h2><?php echo $total_kategori; ?></h2> 
+
         </div>
       </section>
 
       <section id="reports">
         <div class="card">
-          <h2>Reports</h2>
+          <h2>Laporan Atau Cetak Buku</h2>
+          <button>
+            <a href="cetak-buku.php">Cetak Buku</a>
+            </button>
         </div>
        
         
